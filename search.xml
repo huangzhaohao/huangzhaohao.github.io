@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[测试]]></title>
-    <url>%2F2018%2F11%2F14%2F%E6%B5%8B%E8%AF%95%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[指针类型_空指针_二级指针_指针运算_指针与数组]]></title>
+    <url>%2F2018%2F11%2F17%2F08_01_C_01%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177#include&lt;stdlib.h&gt;#include&lt;stdio.h&gt;#include&lt;Windows.h&gt;#include&lt;math.h&gt;#include&lt;time.h&gt;//指针为什么要有类型？//指针有类型，地址没有类型//地址只是开始的位置，类型读取到什么位置结束/*void main()&#123; int i = 90; //int 类型的指针 int *p = &amp;i; double j = 89.3; //赋值为double类型变量的地址 p = &amp;j; printf("double size:%d\n", sizeof(double)); printf("%#x,%lf\n", p,*p); getchar();&#125;*///2.NULL空指针/*void main()&#123; int i = 9; int *p = NULL; //p = &amp;i; //空指针的默认值为0 printf("%#x\n", p); //访问内存地址0x000000操作系统不允许 //p = 10000; //操作系统不允许访问 printf("%d\n", *p); getchar();&#125;*///3.多级指针(二级指针)//指针保存的是变量的地址，保存的这个变量还可以是一个指针变量//动态内存分配给二维数组/*void main()&#123; int a = 50; //p1上保存的a的地址 int *p1 = &amp;a; //p2上保存的p1的地址 int **p2 = &amp;p1; printf("p1:%#x,p2:%#x\n", p1, p2); **p2 = 90; printf("%d\n", a); getchar();&#125;*///4.指针的运算//指针的运算，一般在数组遍历时才有意义，基于数组在内存中线性排列的方式/*void main()&#123; //数组在内存中连续存储 int ids[] = &#123;78,90,23,65,19&#125;; //数组变量名：ids就是数组的首地址 printf("%#x\n",ids); printf("%#x\n", &amp;ids); printf("%#x\n", &amp;ids[0]); printf("%#x\n", &amp;ids[1]); //指针变量 int *p = ids; printf("%d\n", *p); //指针的加法 p++; //p++向前移动sizeof(数据类型)个字节 printf("%d\n", *p); getchar();&#125;*///通过指针给数组赋值/*void main()&#123; int uids[5]; //高级写法 //int i = 0; //for (; i &lt; 5; i++)&#123; // uids[i] = i; //&#125; //早些版本的写法 int *p = uids; printf("%#x\n", p); int i = 0; for (; p &lt; uids + 5; p++)&#123; *p = i; i++; &#125; getchar();&#125;*///6.函数指针/*int msg(char* msg,char* title)&#123; MessageBox(0,msg,title,0); return 0;&#125;void main()&#123; //msg(); printf("%#x\n", msg); printf("%#x\n", &amp;msg); //函数指针 //函数返回值类型，函数指针的名称，函数的参数列表 int(*fun_p)(char* msg, char* title) = msg; fun_p("消息内容","标题"); getchar();&#125;*/int add(int a, int b)&#123; return a + b;&#125;int minus(int a,int b)&#123; return a - b;&#125;//msg函数需要传递一个函数指针参数//类似于Java中的回调函数/*void msg(int(*func_p)(int a, int b), int m, int n)&#123; printf("执行一段代码...\n"); printf("执行另外一个函数...\n"); int r = func_p(m,n); printf("执行结果:%d\n", r);&#125;void main()&#123; //加法 //int(*func_p)(int a, int b) = add; msg(add, 10, 20); //减法 //int(*func_p)(int a, int b) = minus; msg(minus, 50, 10); getchar();&#125;*///案列：用随机数生成一个数组，写一个函数查找最小的值，并返回最小值的地址，在主函数中打印出来int* getMinPointer(int ids[], int len)&#123; int i = 0; int* p = &amp;ids[0]; for (; i &lt; len;i++)&#123; if (ids[i] &lt; *p)&#123; p = &amp;ids[i]; &#125; &#125; return p;&#125;void main()&#123; int ids[10]; int i = 0; //初始化随机数发生器，设置种子，种子不一样，随机数才不一样 //当前时间作为种子 有符号 int --xx -&gt; +xx srand((unsigned)time(NULL)); for (; i &lt; 10; i++)&#123; ids[i] = rand() % 100; printf("%d\n", ids[i]); &#125; int* p = getMinPointer(ids, sizeof(ids) / sizeof(int)); printf("%#x,%d\n", p, *p); getchar();&#125;]]></content>
+      <categories>
+        <category>NDK开发</category>
+        <category>NDK_C语言</category>
+      </categories>
+      <tags>
+        <tag>NDK开发</tag>
+        <tag>NDK_C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[基本数据类型_输入输出_注意事项_指针]]></title>
+    <url>%2F2018%2F11%2F16%2F07_31_C_01%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119#define _CRT_SECURE_NO_WARNINGS //宏定义//引入头文件//只有函数的声明，编译时去找函数的实现#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;#include&lt;Windows.h&gt;/*void main()&#123; printf("hello world\n"); system("pause");&#125;*///1.基本数据类型//int short long float double char/*int %dshort %dlong %ldfloat %fdouble %lfchar %c%x 十六进制%o 八进制%s 字符串*//*void main()&#123; int i = 1; printf("%d\n", i); float f = 23.3; printf("%f\n", f); //基本数据类型所占的字节数 printf("int占%d字节\n", sizeof(int)); printf("char占%d字节\n", sizeof(char)); printf("float占%d字节\n", sizeof(float)); //循环 int n = 0; for (; n &lt; 10; n++)&#123; printf("%d\n",n); &#125; //等待输入,跟system("pause")差不多 getchar();&#125;*///2.输入输出函数/*void main()&#123; int i; printf("请输入一个整数："); //赋值 scanf("%d", &amp;i); //控制台输入，&amp;取地址符 //打印 printf("i的值为：%d\n", i); system("pause");&#125;*///指针//指针存储的是变量的内存地址//内存地址，系统给数据分配的编号(门牌号)/*void main()&#123; int i = 90; //指针变量，创建一个int类型的指针 int* p = &amp;i; //p的值就是i这个变量的内存地址 printf("%#x\n", p); float f = 89.5; //创建一个float类型的指针 float *fp = &amp;f; printf("%#x\n", fp); system("pause");&#125;*//*void change(int *p)&#123; *p = 300;&#125;//变量名，对内存空间上的一段数据的抽象void main()&#123; int i = 90; //i = 89; //创建一个int类型的指针 int *p = &amp;i; //输出地址 printf("p的地址：%#x\n", &amp;p); printf("i的地址：%#x\n", &amp;i); printf("i的值为：%d\n", i); //间接赋值 //*p = 200; //change(p); change(&amp;i); //int *p = &amp;i; printf("i的值为：%d\n", i); system("pause");&#125;*/void main()&#123; int time = 600; printf("time:%#x\n", &amp;time); while (time &gt; 0)&#123; time--; printf("游戏时间剩余%d秒\n", time); //睡眠 Sleep(1000); &#125; system("pause");&#125; 12345678#include&lt;stdlib.h&gt;#include&lt;stdio.h&gt;__declspec(dllexport) void go()&#123; //修改time变量的值 int *p = 0x50fb58; *p = 999999;&#125;]]></content>
+      <categories>
+        <category>NDK开发</category>
+        <category>NDK_C语言</category>
+      </categories>
+      <tags>
+        <tag>NDK开发</tag>
+        <tag>NDK_C语言</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
