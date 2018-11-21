@@ -313,7 +313,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">5</span></a>
 
   </li>
 
@@ -378,6 +378,394 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/08_03_C_02/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaohao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaohao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/20/08_03_C_02/" class="post-title-link" itemprop="http://yoursite.com/index.html">字符串</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-20 16:50:50" itemprop="dateCreated datePublished" datetime="2018-11-20T16:50:50+08:00">2018-11-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-21 16:51:46" itemprop="dateModified" datetime="2018-11-21T16:51:46+08:00">2018-11-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/" itemprop="url" rel="index"><span itemprop="name">NDK开发</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/NDK-C语言/" itemprop="url" rel="index"><span itemprop="name">NDK_C语言</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/20/08_03_C_02/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/20/08_03_C_02/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/20/08_03_C_02/" class="leancloud_visitors" data-flag-title="字符串">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;Windows.h&gt;</span></span><br><span class="line"></span><br><span class="line">//使用字符数组存储字符串</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//char str[] = &#123; <span class="string">'c'</span> , <span class="string">'h'</span> , <span class="string">'i'</span> , <span class="string">'n'</span> , <span class="string">'a'</span> , <span class="string">'\0'</span> &#125;;</span><br><span class="line">	//char str[6] = &#123; <span class="string">'c'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'n'</span>, <span class="string">'a'</span> &#125;;//多出一个默认为<span class="string">'\0'</span></span><br><span class="line">	char str[10] = <span class="string">"china"</span>;</span><br><span class="line">	//可以修改</span><br><span class="line">	str[0] = <span class="string">'s'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%#x\n"</span>, str);</span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//字符指针</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//内存连续排列</span><br><span class="line">	char *str = <span class="string">"how are you?"</span>;</span><br><span class="line"></span><br><span class="line">	//不能修改</span><br><span class="line">	//str += 1;</span><br><span class="line">	//*str = <span class="string">'y'</span>;</span><br><span class="line"></span><br><span class="line">	//str[0] = <span class="string">'w'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%#x\n"</span>, str);</span><br><span class="line"></span><br><span class="line">	//使用指针加法，截取字符串</span><br><span class="line">	str += 3;</span><br><span class="line">	<span class="keyword">while</span> (*str)&#123;//取不到值时*str为0</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%c"</span>, *str);</span><br><span class="line">		str++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//strcat字符串拼接函数</span><br><span class="line">//在线API文档：</span><br><span class="line">//http://www.kuqin.com/clib/string/strcpy.html</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char dest[50];</span><br><span class="line">	char *a = <span class="string">"china"</span>;</span><br><span class="line">	char *b = <span class="string">" is powerful!"</span>;</span><br><span class="line">	strcpy(dest, a);</span><br><span class="line">	strcat(dest, b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, dest);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//strchr在一个串中查找给定字符的第一个匹配之处</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char *str = <span class="string">"I want go to USA!"</span>;</span><br><span class="line">	//U元素的指针</span><br><span class="line">	//str+3</span><br><span class="line">	char* p = strchr(str, <span class="string">'w'</span>);</span><br><span class="line">	<span class="keyword">if</span> (p)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"索引位置：%d\n"</span>, p - str);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"没有找到"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//strstr 从字符串haystack中寻找needle第一次出现的位置</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char *haystack = <span class="string">"I want go to USA!"</span>;</span><br><span class="line">	char *needle = <span class="string">"to"</span>;</span><br><span class="line">	//U元素的指针</span><br><span class="line"></span><br><span class="line">	char* p = strstr(haystack, needle);</span><br><span class="line">	<span class="keyword">if</span> (p)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"索引位置：%d\n"</span>, p - haystack);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"没有找到"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//strcmp 比较字符串  strcmpi 比较字符串，忽略大小写</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char *str1 = <span class="string">"abc"</span>;</span><br><span class="line">	char *str2 = <span class="string">"ABC"</span>;</span><br><span class="line">	//int r = strcmp(str1, str2);</span><br><span class="line">	int r = _strcmpi(str1, str2);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, r);</span><br><span class="line">	//str1 &gt; str2</span><br><span class="line">	<span class="keyword">if</span> (r &gt; 0)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"str1 大于str2\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (r == 0)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"str1 等于str2\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	//str1 &lt; str2</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (r &lt; 0)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"str1 小于str2\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//strset 把字符串s中的所有字符都设置成字符c</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char str[] = <span class="string">"internet change the world!"</span>;</span><br><span class="line">	_strset(str, <span class="string">'w'</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, str);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//strrev 把字符串s的所有字符的顺序颠倒过来</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char str[] = <span class="string">"internet change the world!"</span>;</span><br><span class="line">	_strrev(str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, str);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//atoi 字符串转为int类型</span><br><span class="line">//atol()：将字符串转换为长整型值</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char* str = <span class="string">"78"</span>;</span><br><span class="line">	int r = atoi(str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, r);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">// 字符串转为double类型</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char* str = <span class="string">"77b8b"</span>;</span><br><span class="line">	char** p = NULL;</span><br><span class="line">	//char* p = str + 2;</span><br><span class="line">	//参数说明：str为要转换的字符串，endstr 为第一个不能转换的字符的指针</span><br><span class="line">	double r = strtod(str,p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lf\n"</span>, r);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%#x\n"</span>, p);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//strupr转换为大写</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char str[] = <span class="string">"CHINA motherland!"</span>;</span><br><span class="line">	_strupr(str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, str);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//转换为小写</span><br><span class="line">/*</span><br><span class="line">void mystrlwr(char str[], int len)&#123;</span><br><span class="line">	int i = 0;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt; len; i++)&#123;</span><br><span class="line">		//A-Z 字母 a-Z</span><br><span class="line">		<span class="keyword">if</span> (str[i] &gt;= <span class="string">'A'</span> &amp;&amp; str[i] &lt;= <span class="string">'Z'</span>)&#123;</span><br><span class="line">			str[i] = str[i] - <span class="string">'A'</span> + <span class="string">'a'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char str[] = <span class="string">"CHINA motherland!"</span>;</span><br><span class="line">	mystrlwr(str, strlen(str));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, str);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//练习：删除字符串中指定的字符</span><br><span class="line">/*</span><br><span class="line">void delchar(char *str, char del)&#123;</span><br><span class="line">	char *p = str;</span><br><span class="line">	<span class="keyword">while</span> (*str != <span class="string">'\0'</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (*str != del) &#123;</span><br><span class="line">			*p++ = *str;</span><br><span class="line">		&#125;</span><br><span class="line">		str++;</span><br><span class="line">	&#125;</span><br><span class="line">	*p = <span class="string">'\0'</span>;</span><br><span class="line">&#125;</span><br><span class="line">//删除最后一个字符</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char str[] = <span class="string">"vencent ppqq"</span>;</span><br><span class="line"></span><br><span class="line">	delchar(str, <span class="string">'t'</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, str);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//Java String replaceAll</span><br><span class="line">//StringBuffer buff.deleteCharAt(buff.length()-1);</span><br><span class="line">//删除最后一个字符</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char str[] = <span class="string">"internet,"</span>;</span><br><span class="line">	str[strlen(str) - 1] = <span class="string">'\0'</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, str);</span><br><span class="line"></span><br><span class="line">	//作业：realloc实现StringBuffer的拼接，而不是一开始开辟一个很大的数组</span><br><span class="line">	//结构体StringBuffer</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//memcpy 由src所指内存区域复制count个字节到dest所指内存区域</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char src[] = <span class="string">"C,C++,Java"</span>;</span><br><span class="line">	char dest[20] = &#123; 0 &#125;;</span><br><span class="line"></span><br><span class="line">	//字节</span><br><span class="line">	memcpy(dest, src, 5);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, dest);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//memchr 从buf所指内存区域的前count个字节查找字符ch。</span><br><span class="line">/*</span><br><span class="line">void main(void)&#123;</span><br><span class="line">	char src[] = <span class="string">"C,C++,Java"</span>;</span><br><span class="line">	char ch = <span class="string">'C'</span>;</span><br><span class="line"></span><br><span class="line">	//字节 (分段截取)</span><br><span class="line">	char* p = memchr(src + 3, ch, 5);</span><br><span class="line">	<span class="keyword">if</span> (p)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"索引：%d\n"</span>, p - src);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"找不到\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//memmove 由src所指内存区域复制count个字节到dest所指内存区域。</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	char s[] = <span class="string">"Michael Jackson!"</span>;</span><br><span class="line">	//截取的效果</span><br><span class="line">	memmove(s, s + 8, strlen(s) - 8 - 1);</span><br><span class="line">	s[strlen(s) - 8] = 0;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, s);</span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//在字符串s1中寻找字符串s2中任何一个字符相匹配的第一个字符的位置，空字符NULL不包括在内</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	char *s1 = <span class="string">"Welcome To Beijing"</span>;</span><br><span class="line">	char *s2 = <span class="string">"to"</span>;</span><br><span class="line">	char *p;</span><br><span class="line"></span><br><span class="line">	p = strpbrk(s1, s2);</span><br><span class="line">	<span class="keyword">if</span> (p)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, p);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Not Found!\n"</span>);</span><br><span class="line"></span><br><span class="line">	p = strpbrk(s1, <span class="string">"Da"</span>);</span><br><span class="line">	<span class="keyword">if</span> (p)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s"</span>, p);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Not Found!"</span>);</span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/08_03_C_01/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaohao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaohao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/20/08_03_C_01/" class="post-title-link" itemprop="http://yoursite.com/index.html">动态内存分配</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-20 16:49:55 / 修改时间：16:50:34" itemprop="dateCreated datePublished" datetime="2018-11-20T16:49:55+08:00">2018-11-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/" itemprop="url" rel="index"><span itemprop="name">NDK开发</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/NDK-C语言/" itemprop="url" rel="index"><span itemprop="name">NDK_C语言</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/20/08_03_C_01/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/20/08_03_C_01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/20/08_03_C_01/" class="leancloud_visitors" data-flag-title="动态内存分配">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;Windows.h&gt;</span></span><br><span class="line"></span><br><span class="line">//动态内存分配</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//40M</span><br><span class="line">	//stack overflow错误，栈溢出</span><br><span class="line">	//静态内存分配</span><br><span class="line">	int a[1024 * 1024 * 10 * sizeof(int)];</span><br><span class="line">	//栈内存</span><br><span class="line"></span><br><span class="line">	//c语言内存分配：</span><br><span class="line">	//1.栈区(stack)</span><br><span class="line">	//windows下，栈内存分配2M（确定的常数）,超出了限制，提示stack overflow错误</span><br><span class="line">	//自动分配，释放</span><br><span class="line">	//2.堆区(heap)</span><br><span class="line">	//程序员手动分配和释放，操作系统80%内存</span><br><span class="line">	//3.全局区或静态区</span><br><span class="line">	//4.字符常量区</span><br><span class="line">	//5.程序代码区</span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">//栈内存</span><br><span class="line">void <span class="function"><span class="title">stackFun</span></span>()&#123;</span><br><span class="line">	int a[1024];</span><br><span class="line">	//栈内存自动释放</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//堆内存</span><br><span class="line">void <span class="function"><span class="title">heapFun</span></span>()&#123;</span><br><span class="line">	//40M内存</span><br><span class="line">	//void *任意类型的指针</span><br><span class="line">	int* p = malloc(1024 * 1024 * 10 * sizeof(int));</span><br><span class="line"></span><br><span class="line">	//释放</span><br><span class="line">	free(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">	//在堆内存上，分配40M的内存</span><br><span class="line">	<span class="keyword">while</span> (1)&#123;</span><br><span class="line">		Sleep(1000);</span><br><span class="line"></span><br><span class="line">		stackFun();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//创建一个数组，动态指定数组的大小</span><br><span class="line">//(在程序运行过程中，可以随意的开辟指定大小的内存以供使用，相当于JAVA中的集合)</span><br><span class="line">//静态内存分配，分配内存大小是固定的，问题：1.很容易超出栈内存的最大值 2.为了防止内存不够用会开辟更多的内存，容易浪费内存</span><br><span class="line">//动态内存分配，在程序运行过程中，动态指定需要使用的内存大小，手动释放，释放之后这些内存还可以被重新使用</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//静态内存分配创建数组，数组的大小是固定的</span><br><span class="line">	int a[10];</span><br><span class="line"></span><br><span class="line">	int len;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"输入数组的长度："</span>);</span><br><span class="line">	scanf(<span class="string">"%d"</span>, &amp;len);</span><br><span class="line"></span><br><span class="line">	//开辟内存，内存大小len*4字节</span><br><span class="line">	int* p = malloc(len * sizeof(int));</span><br><span class="line">	//p,数组的首地址，p就是数组的名称</span><br><span class="line">	//给数组元素赋值（使用这一块刚刚开辟出来的内存区域）</span><br><span class="line">	int i = 0;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt; len; i++)&#123;</span><br><span class="line">		p[i] = rand() % 100;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d,%#x\n"</span>, p[i], &amp;p[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//手动释放内存</span><br><span class="line">	free(p);</span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//realloc 重新分配内存</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int len;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"第一次输入数组的长度："</span>);</span><br><span class="line">	scanf(<span class="string">"%d"</span>, &amp;len);</span><br><span class="line"></span><br><span class="line">	//int* p = malloc(len * sizeof(int));</span><br><span class="line">	int* p = calloc(len, sizeof(int));</span><br><span class="line">	int i = 0;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt; len; i++)&#123;</span><br><span class="line">		p[i] = rand() % 100;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d,%#x\n"</span>, p[i], &amp;p[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	int addLen;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"输入数组增加的长度："</span>);</span><br><span class="line">	scanf(<span class="string">"%d"</span>, &amp;addLen);</span><br><span class="line">	//内存不够用，扩大刚刚分配的内存空间</span><br><span class="line">	//1.原来内存的指针 2.内存扩大之后的总大小</span><br><span class="line">	int* p2 = realloc(p, sizeof(int)* (len + addLen));</span><br><span class="line">	<span class="keyword">if</span> (p2 == NULL)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"重新分配失败，能分配的内存不够用了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	//重新分配内存的两种情况：</span><br><span class="line">	//缩小，缩小的那一部分数据会丢失</span><br><span class="line">	//扩大，（连续的）</span><br><span class="line">	//1.如果当前内存段后面有需要的内存空间，直接扩展这段内存空间，realloc返回原指针</span><br><span class="line">	//2.如果当前内存段后面的空闲字节不够，那么就使用堆中的第一个能够满足这一要求的内存块，将目前的数据复制到新的位置，并将原来的数据块释放掉，返回新的内存地址</span><br><span class="line">	//3.如果申请失败，返回NULL，原来的指针仍然有效</span><br><span class="line"></span><br><span class="line">	//重新赋值</span><br><span class="line">	i = 0;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt; len + addLen;i++)&#123;</span><br><span class="line">		p2[i] = rand() % 200;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d,%#x\n"</span>, p2[i], &amp;p2[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//手动释放内存</span><br><span class="line">	<span class="keyword">if</span> (p != NULL)&#123;</span><br><span class="line">		free(p);</span><br><span class="line">		p = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (p2 != NULL)&#123;</span><br><span class="line">		free(p2);</span><br><span class="line">		p2 = NULL;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//内存分配的几个注意细节</span><br><span class="line">//1.不能多次释放</span><br><span class="line">//2.释放完之后，给指针置NULL，标志释放完成</span><br><span class="line">//3.内存泄漏(p重新赋值之后，再free,并没有真正释放内存)</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int len;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"输入数组的长度："</span>);</span><br><span class="line">	scanf(<span class="string">"%d"</span>, &amp;len);</span><br><span class="line"></span><br><span class="line">	int* p = malloc(len * sizeof(int));</span><br><span class="line">	int i = 0;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt; len; i++)&#123;</span><br><span class="line">		p[i] = rand() % 100;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d,%#x\n"</span>, p[i], &amp;p[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (p != NULL)&#123;</span><br><span class="line">		free(p);</span><br><span class="line">		p = NULL;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//40M</span><br><span class="line">	int* p1 = malloc(1024 * 1024 * 10 * sizeof(int));</span><br><span class="line">	free(p1);</span><br><span class="line">	p1 = NULL;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%#x\n"</span>, p1);</span><br><span class="line">	//80M</span><br><span class="line">	p1 = malloc(1024 * 1024 * 10 * sizeof(int) * 2);</span><br><span class="line"></span><br><span class="line">	free(p1);</span><br><span class="line">	p1 = NULL;</span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1031,7 +1419,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1676,6 +2064,10 @@
 
   
   
+    
+      
+    
+      
     
       
     
