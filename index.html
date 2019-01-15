@@ -313,7 +313,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">24</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">25</span></a>
 
   </li>
 
@@ -378,6 +378,194 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/09_07_C++_01/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaohao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaohao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/14/09_07_C++_01/" class="post-title-link" itemprop="http://yoursite.com/index.html">C++类型转换</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-14 16:30:10 / 修改时间：16:31:16" itemprop="dateCreated datePublished" datetime="2019-01-14T16:30:10+08:00">2019-01-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/" itemprop="url" rel="index"><span itemprop="name">NDK开发</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/NDK-C/" itemprop="url" rel="index"><span itemprop="name">NDK_C++</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/14/09_07_C++_01/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/14/09_07_C++_01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/14/09_07_C++_01/" class="leancloud_visitors" data-flag-title="C++类型转换">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">//C++类型转换</span><br><span class="line">//static_cast</span><br><span class="line">//const_cast</span><br><span class="line">//dynamic_cast	子类类型转为父类类型</span><br><span class="line">//reinterpret_cast	函数指针转型，不具备移植性</span><br><span class="line"></span><br><span class="line">//原始类型转换，所有情况都是一种写法，可读性不高，有可能有潜在的风险</span><br><span class="line">/*</span><br><span class="line">void* func(int <span class="built_in">type</span>)&#123;</span><br><span class="line">	switch (<span class="built_in">type</span>)&#123;</span><br><span class="line">	<span class="keyword">case</span> 1:&#123;</span><br><span class="line">			   int i = 9;</span><br><span class="line">			   <span class="built_in">return</span> &amp;i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> 2:&#123;</span><br><span class="line">			   char a = <span class="string">'X'</span>;</span><br><span class="line">			   <span class="built_in">return</span> &amp;a;</span><br><span class="line">	&#125;</span><br><span class="line">	default:&#123;</span><br><span class="line">				<span class="built_in">return</span> NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> NULL;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void func2(char* c_p)&#123;</span><br><span class="line">	cout &lt;&lt; *c_p &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//int i = 0;</span><br><span class="line">	//自动转换</span><br><span class="line">	//double d = i;</span><br><span class="line"></span><br><span class="line">	//double d = 9.5;</span><br><span class="line">	//int i = d;</span><br><span class="line"></span><br><span class="line">	//int i = 8;</span><br><span class="line">	//double d = 9.5;</span><br><span class="line">	//i = static_cast&lt;int&gt;(d);</span><br><span class="line"></span><br><span class="line">	//int i = 9;</span><br><span class="line">	//int *i_p = &amp;i;</span><br><span class="line"></span><br><span class="line">	//void* -&gt; char*</span><br><span class="line">	//char* c_p = (char*)func(2);</span><br><span class="line">	//char* c_p = static_cast&lt;char*&gt;(func(2));</span><br><span class="line"></span><br><span class="line">	//C++ 意图明显</span><br><span class="line">	func2(static_cast&lt;char*&gt;(func(2)));</span><br><span class="line">	//C</span><br><span class="line">	func2((char*)(func(2)));</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">void func(const char c[])&#123;</span><br><span class="line">	//c[1] = <span class="string">'a'</span>;</span><br><span class="line">	//通过指针间接赋值</span><br><span class="line">	//其他人并不知道，这次转型是为了去常量</span><br><span class="line">	//char* c_p = (char*)c;</span><br><span class="line">	//c_p[1] = <span class="string">'X'</span>;</span><br><span class="line">	//提高了可读性</span><br><span class="line">	char* c_p = const_cast&lt;char*&gt;(c);</span><br><span class="line">	c_p[1] = <span class="string">'Y'</span>;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	char c[] = <span class="string">"hello"</span>;</span><br><span class="line">	func(c);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">class Person&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void <span class="function"><span class="title">print</span></span>()&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"人"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Man : public Person&#123;</span><br><span class="line">public:</span><br><span class="line">	void <span class="function"><span class="title">print</span></span>()&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"男人"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	void <span class="function"><span class="title">chasing</span></span>()&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"泡妞"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Woman : public Person&#123;</span><br><span class="line">public:</span><br><span class="line">	void <span class="function"><span class="title">print</span></span>()&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"女人"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	void <span class="function"><span class="title">carebaby</span></span>()&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"生孩子"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void func(Person* obj)&#123;</span><br><span class="line">	//调用子类的特有的函数，转为实际类型</span><br><span class="line">	//并不知道转型失败</span><br><span class="line">	//Man* m = (Man*)obj;</span><br><span class="line">	//m-&gt;<span class="built_in">print</span>();</span><br><span class="line"></span><br><span class="line">	//转型失败，返回NULL</span><br><span class="line">	Man *m = dynamic_cast&lt;Man*&gt;(obj);</span><br><span class="line">	<span class="keyword">if</span> (m != NULL)&#123;</span><br><span class="line">		m-&gt;chasing();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Woman *w = dynamic_cast&lt;Woman*&gt;(obj);</span><br><span class="line">	<span class="keyword">if</span> (w != NULL)&#123;</span><br><span class="line">		w-&gt;carebaby();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	Woman w1;</span><br><span class="line">	Person *p1 = &amp;w1;</span><br><span class="line"></span><br><span class="line">	func(p1);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">func1</span></span>()&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">"func1"</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">char* <span class="function"><span class="title">func2</span></span>()&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">"func2"</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">return</span> <span class="string">"abc"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">typedef void (*f_p)();</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//函数指针数组</span><br><span class="line">	f_p f_array[6];</span><br><span class="line">	//赋值</span><br><span class="line">	f_array[0] = func1;</span><br><span class="line"></span><br><span class="line">	//C方式</span><br><span class="line">	//f_array[1] = (f_p)func2;</span><br><span class="line">	//C++方式</span><br><span class="line">	f_array[1] = reinterpret_cast&lt;f_p&gt;(func2);</span><br><span class="line"></span><br><span class="line">	f_array[1]();</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2094,209 +2282,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/08_19_NDK/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhaohao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zhaohao's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/11/08_19_NDK/" class="post-title-link" itemprop="http://yoursite.com/index.html">文件拆分与合并</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-11 16:25:15" itemprop="dateCreated datePublished" datetime="2018-12-11T16:25:15+08:00">2018-12-11</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-13 17:09:37" itemprop="dateModified" datetime="2018-12-13T17:09:37+08:00">2018-12-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/" itemprop="url" rel="index"><span itemprop="name">NDK开发</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/NDK-JNI/" itemprop="url" rel="index"><span itemprop="name">NDK_JNI</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/11/08_19_NDK/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/11/08_19_NDK/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/12/11/08_19_NDK/" class="leancloud_visitors" data-flag-title="文件拆分与合并">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>NDKFileUtils.java<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.hzh.ndk_file_patch;</span><br><span class="line"></span><br><span class="line">public class NDKFileUtils &#123;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        System.loadLibrary(<span class="string">"ndk_file_patch"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 拆分</span><br><span class="line">     * @param path</span><br><span class="line">     * @param path_pattern</span><br><span class="line">     * @param count</span><br><span class="line">     */</span><br><span class="line">    public native static void diff(String path,String path_pattern,int count);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 合并</span><br><span class="line">     * @param path_pattern</span><br><span class="line">     * @param count</span><br><span class="line">     * @param total</span><br><span class="line">     */</span><br><span class="line">    public native static void patch(String path_pattern,int count,String merge_patch);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>ndk_file_patch.c<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include "com_hzh_ndk_file_patch_NDKFileUtils.h"</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#include &lt;android/log.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define LOGI(FORMAT,...) __android_log_print(ANDROID_LOG_INFO,"hzh",FORMAT,__VA_ARGS__);</span></span><br><span class="line"><span class="comment">#define LOGE(FORMAT,...) __android_log_print(ANDROID_LOG_ERROR,"hzh",FORMAT,__VA_ARGS__);</span></span><br><span class="line"></span><br><span class="line">//获取文件大小</span><br><span class="line">long get_file_size(char* path)&#123;</span><br><span class="line">    FILE *fp = fopen(path,<span class="string">"rb"</span>);</span><br><span class="line">    fseek(fp,0,SEEK_END);</span><br><span class="line">    <span class="built_in">return</span> ftell(fp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//拆分</span><br><span class="line">JNIEXPORT void JNICALL Java_com_hzh_ndk_1file_1patch_NDKFileUtils_diff</span><br><span class="line">        (JNIEnv *env, jclass jcls, jstring path_jstr, jstring path_pattern_jstr,jint file_num)&#123;</span><br><span class="line">    //jstring -&gt; char*</span><br><span class="line">    //需要分割的文件路径</span><br><span class="line">    const char *path = (*env)-&gt;GetStringUTFChars(env, path_jstr,NULL);</span><br><span class="line">    const char *path_pattern = (*env)-&gt;GetStringUTFChars(env, path_pattern_jstr, NULL);</span><br><span class="line"></span><br><span class="line">    //得到分割之后的子文件的路径列表</span><br><span class="line">    char **patches = malloc(sizeof(char*) * file_num);</span><br><span class="line">    int i = 0;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; file_num; i++) &#123;</span><br><span class="line">        patches[i] = malloc(sizeof(char) * 100);</span><br><span class="line">        //元素赋值</span><br><span class="line">        //需要分割的文件：C://jason/liuyan.png</span><br><span class="line">        //子文件：C://jason/liuyan_%d.png</span><br><span class="line">        sprintf(patches[i],path_pattern,(i+1));</span><br><span class="line">        LOGI(<span class="string">"path path:%s"</span>,patches[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //不断读取path文件，循环写入file_num个文件中</span><br><span class="line">    //    整除</span><br><span class="line">    //    文件大小：90，分成9个文件，每个文件10</span><br><span class="line">    //    不整除</span><br><span class="line">    //    文件大小：110，分成9个文件</span><br><span class="line">    //    前（9-1）个文件为(110/(9-1))=13</span><br><span class="line">    //    最后一个文件(110%(9-1))=6</span><br><span class="line">    int filesize = get_file_size(path);</span><br><span class="line">    FILE *fpr = fopen(path,<span class="string">"rb"</span>);</span><br><span class="line">    //整除</span><br><span class="line">    <span class="keyword">if</span>(filesize % file_num == 0)&#123;</span><br><span class="line">        //单个文件大小</span><br><span class="line">        int part = filesize / file_num;</span><br><span class="line">        i = 0;</span><br><span class="line">        //逐一写入不同的分割子文件中</span><br><span class="line">        <span class="keyword">for</span>(;i &lt; file_num;i++)&#123;</span><br><span class="line">            FILE *fpw = fopen(patches[i],<span class="string">"wb"</span>);</span><br><span class="line">            int j = 0;</span><br><span class="line">            <span class="keyword">for</span>(; j &lt; part;j++)&#123;</span><br><span class="line">                //边读边写</span><br><span class="line">                fputc(fgetc(fpr),fpw);</span><br><span class="line">            &#125;</span><br><span class="line">            fclose(fpw);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        //不整除</span><br><span class="line">        int part = filesize / (file_num - 1);</span><br><span class="line">        i = 0;</span><br><span class="line">        <span class="keyword">for</span>(;i &lt; file_num - 1;i++)&#123;</span><br><span class="line">            FILE *fpw = fopen(patches[i],<span class="string">"wb"</span>);</span><br><span class="line">            int j = 0;</span><br><span class="line">            <span class="keyword">for</span>(; j &lt; part;j++)&#123;</span><br><span class="line">                //边读边写</span><br><span class="line">                fputc(fgetc(fpr),fpw);</span><br><span class="line">            &#125;</span><br><span class="line">            fclose(fpw);</span><br><span class="line">        &#125;</span><br><span class="line">        //the last one</span><br><span class="line">        FILE *fpw = fopen(patches[file_num-1],<span class="string">"wb"</span>);</span><br><span class="line">        i = 0;</span><br><span class="line">        <span class="keyword">for</span>(; i &lt; filesize%(file_num - 1);i++)&#123;</span><br><span class="line">            fputc(fgetc(fpr),fpw);</span><br><span class="line">        &#125;</span><br><span class="line">        fclose(fpw);</span><br><span class="line">    &#125;</span><br><span class="line">    //关闭被分割的文件</span><br><span class="line">    fclose(fpr);</span><br><span class="line"></span><br><span class="line">    //释放</span><br><span class="line">    i = 0;</span><br><span class="line">    <span class="keyword">for</span>(;i &lt; file_num;i++)&#123;</span><br><span class="line">        free(patches[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    free(patches);</span><br><span class="line"></span><br><span class="line">    (*env)-&gt;ReleaseStringUTFChars(env,path_jstr,path);</span><br><span class="line">    (*env)-&gt;ReleaseStringUTFChars(env,path_pattern_jstr,path_pattern);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//合并</span><br><span class="line">JNIEXPORT void JNICALL Java_com_hzh_ndk_1file_1patch_NDKFileUtils_patch</span><br><span class="line">        (JNIEnv *env, jclass jcls, jstring path_pattern_jstr, jint file_num,jstring merge_path_jstr)&#123;</span><br><span class="line">    //合并之后的文件</span><br><span class="line">    const char *merge_path = (*env)-&gt;GetStringUTFChars(env, merge_path_jstr,NULL);</span><br><span class="line">    //分割子文件的pattern</span><br><span class="line">    const char *path_pattern = (*env)-&gt;GetStringUTFChars(env, path_pattern_jstr,NULL);</span><br><span class="line">    //得到分割之后的子文件的路径列表</span><br><span class="line">    char **patches = malloc(sizeof(char*) * file_num);</span><br><span class="line">    int i = 0;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; file_num; i++) &#123;</span><br><span class="line">        patches[i] = malloc(sizeof(char) * 100);</span><br><span class="line">        //元素赋值</span><br><span class="line">        //需要分割的文件：C://jason/liuyan.png</span><br><span class="line">        //子文件：C://jason/liuyan_%d.png</span><br><span class="line">        sprintf(patches[i],path_pattern,(i+1));</span><br><span class="line">        LOGI(<span class="string">"path path:%s"</span>,patches[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    FILE *fpw = fopen(merge_path,<span class="string">"wb"</span>);</span><br><span class="line">    //把所有的分割文件读取一遍，写入一个总的文件中</span><br><span class="line">    i = 0;</span><br><span class="line">    <span class="keyword">for</span>(; i &lt; file_num;i++)&#123;</span><br><span class="line">        //每个子文件的大小</span><br><span class="line">        int filesize = get_file_size(patches[i]);</span><br><span class="line">        FILE *fpr = fopen(patches[i],<span class="string">"rb"</span>);</span><br><span class="line">        int j = 0;</span><br><span class="line">        <span class="keyword">for</span>(; j &lt; filesize; j++)&#123;</span><br><span class="line">            fputc(fgetc(fpr),fpw);</span><br><span class="line">        &#125;</span><br><span class="line">        fclose(fpr);</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fpw);</span><br><span class="line"></span><br><span class="line">    //释放</span><br><span class="line">    i = 0;</span><br><span class="line">    <span class="keyword">for</span>(;i &lt; file_num;i++)&#123;</span><br><span class="line">        free(patches[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    free(patches);</span><br><span class="line"></span><br><span class="line">    (*env)-&gt;ReleaseStringUTFChars(env,merge_path_jstr,merge_path);</span><br><span class="line">    (*env)-&gt;ReleaseStringUTFChars(env,path_pattern_jstr,path_pattern);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>com_hzh_ndk_file_patch_NDKFileUtils.h<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/* DO NOT EDIT THIS FILE - it is machine generated */</span><br><span class="line"><span class="comment">#include &lt;jni.h&gt;</span></span><br><span class="line">/* Header <span class="keyword">for</span> class com_hzh_ndk_file_patch_NDKFileUtils */</span><br><span class="line"></span><br><span class="line"><span class="comment">#ifndef _Included_com_hzh_ndk_file_patch_NDKFileUtils</span></span><br><span class="line"><span class="comment">#define _Included_com_hzh_ndk_file_patch_NDKFileUtils</span></span><br><span class="line"><span class="comment">#ifdef __cplusplus</span></span><br><span class="line">extern <span class="string">"C"</span> &#123;</span><br><span class="line"><span class="comment">#endif</span></span><br><span class="line">/*</span><br><span class="line"> * Class:     com_hzh_ndk_file_patch_NDKFileUtils</span><br><span class="line"> * Method:    diff</span><br><span class="line"> * Signature: (Ljava/lang/String;I)V</span><br><span class="line"> */</span><br><span class="line">JNIEXPORT void JNICALL Java_com_hzh_ndk_1file_1patch_NDKFileUtils_diff</span><br><span class="line">  (JNIEnv *, jclass, jstring, jstring ,jint);</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * Class:     com_hzh_ndk_file_patch_NDKFileUtils</span><br><span class="line"> * Method:    patch</span><br><span class="line"> * Signature: (Ljava/lang/String;I)V</span><br><span class="line"> */</span><br><span class="line">JNIEXPORT void JNICALL Java_com_hzh_ndk_1file_1patch_NDKFileUtils_patch</span><br><span class="line">  (JNIEnv *, jclass, jstring,jint,jstring);</span><br><span class="line"></span><br><span class="line"><span class="comment">#ifdef __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#endif</span></span><br><span class="line"><span class="comment">#endif</span></span><br></pre></td></tr></table></figure></p>
-<p>CMakeLists.txt<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># For more information about using CMake with Android Studio, read the</span></span><br><span class="line"><span class="comment"># documentation: https://d.android.com/studio/projects/add-native-code.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sets the minimum version of CMake required to build the native library.</span></span><br><span class="line"></span><br><span class="line">cmake_minimum_required(VERSION 3.4.1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Creates and names a library, sets it as either STATIC</span></span><br><span class="line"><span class="comment"># or SHARED, and provides the relative paths to its source code.</span></span><br><span class="line"><span class="comment"># You can define multiple libraries, and CMake builds them for you.</span></span><br><span class="line"><span class="comment"># Gradle automatically packages shared libraries with your APK.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#C 的编译选项是 CMAKE_C_FLAGS</span></span><br><span class="line"><span class="comment"># 指定编译参数，可选</span></span><br><span class="line"><span class="comment">#SET(CMAKE_CXX_FLAGS "-Wno-error=format-security -Wno-error=pointer-sign")</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#设置生成的so动态库最后输出的路径</span></span><br><span class="line"><span class="built_in">set</span>(CMAKE_LIBRARY_OUTPUT_DIRECTORY <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/../jniLibs/<span class="variable">$&#123;ANDROID_ABI&#125;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置头文件搜索路径（和此txt同个路径的头文件无需设置），可选</span></span><br><span class="line"><span class="comment">#INCLUDE_DIRECTORIES($&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/common)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#指定用到的系统库或者NDK库或者第三方库的搜索路径，可选。</span></span><br><span class="line"><span class="comment">#LINK_DIRECTORIES(/usr/local/lib)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">add_library( <span class="comment"># Sets the name of the library.</span></span><br><span class="line">             ndk_file_patch</span><br><span class="line"></span><br><span class="line">             <span class="comment"># Sets the library as a shared library.</span></span><br><span class="line">             SHARED</span><br><span class="line"></span><br><span class="line">             <span class="comment"># Provides a relative path to your source file(s).</span></span><br><span class="line">             src/main/cpp/ndk_file_patch.c )</span><br><span class="line"></span><br><span class="line"><span class="comment"># Searches for a specified prebuilt library and stores the path as a</span></span><br><span class="line"><span class="comment"># variable. Because CMake includes system libraries in the search path by</span></span><br><span class="line"><span class="comment"># default, you only need to specify the name of the public NDK library</span></span><br><span class="line"><span class="comment"># you want to add. CMake verifies that the library exists before</span></span><br><span class="line"><span class="comment"># completing its build.</span></span><br><span class="line"></span><br><span class="line">find_library( <span class="comment"># Sets the name of the path variable.</span></span><br><span class="line">              <span class="built_in">log</span>-lib</span><br><span class="line"></span><br><span class="line">              <span class="comment"># Specifies the name of the NDK library that</span></span><br><span class="line">              <span class="comment"># you want CMake to locate.</span></span><br><span class="line">              <span class="built_in">log</span> )</span><br><span class="line"></span><br><span class="line"><span class="comment"># Specifies libraries CMake should link to your target library. You</span></span><br><span class="line"><span class="comment"># can link multiple libraries, such as libraries you define in this</span></span><br><span class="line"><span class="comment"># build script, prebuilt third-party libraries, or system libraries.</span></span><br><span class="line"></span><br><span class="line">target_link_libraries( <span class="comment"># Specifies the target library.</span></span><br><span class="line">                       ndk_file_patch</span><br><span class="line"></span><br><span class="line">                       <span class="comment"># Links the target library to the log library</span></span><br><span class="line">                       <span class="comment"># included in the NDK.</span></span><br><span class="line">                       <span class="variable">$&#123;log-lib&#125;</span> )</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2344,7 +2329,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
