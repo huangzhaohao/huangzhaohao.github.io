@@ -394,206 +394,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/08_24_C++/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhaohao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zhaohao's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/09/27/08_24_C++/" class="post-title-link" itemprop="http://yoursite.com/page/3/index.html">C++命名空间_引用_函数默认参数_可变参数</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-27 11:48:30" itemprop="dateCreated datePublished" datetime="2019-09-27T11:48:30+08:00">2019-09-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-23 17:23:12" itemprop="dateModified" datetime="2018-12-23T17:23:12+08:00">2018-12-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/" itemprop="url" rel="index"><span itemprop="name">NDK开发</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/NDK-C/" itemprop="url" rel="index"><span itemprop="name">NDK_C++</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/27/08_24_C++/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/09/27/08_24_C++/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/09/27/08_24_C++/" class="leancloud_visitors" data-flag-title="C++命名空间_引用_函数默认参数_可变参数">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>01.cpp<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdarg.h&gt;</span></span><br><span class="line">//标准命名空间(包含很多标准的定义)</span><br><span class="line">//standard</span><br><span class="line">using namespace std;</span><br><span class="line">//命名空间类似于Java中的包(归类)</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">//自定义命名空间</span><br><span class="line">namespace NSP_A&#123;</span><br><span class="line">	int a = 9;</span><br><span class="line">	struct Student&#123;</span><br><span class="line">		char name[20];</span><br><span class="line">		int age;</span><br><span class="line">	&#125;;</span><br><span class="line">	struct Teacher&#123;</span><br><span class="line">		char name[20];</span><br><span class="line">		int age;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">namespace NSP_B&#123;</span><br><span class="line">	int a = 12;</span><br><span class="line">	//命名空间嵌套</span><br><span class="line">	namespace NSP_C&#123;</span><br><span class="line">		int c = 90;</span><br><span class="line">	&#125;</span><br><span class="line">	struct Student&#123;</span><br><span class="line">		char name[20];</span><br><span class="line">		int age;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//运算符重载</span><br><span class="line">	//std::cout &lt;&lt; <span class="string">"this is c plus plus"</span> &lt;&lt; std::endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">"this is c plus plus"</span> &lt;&lt; endl;</span><br><span class="line">	//使用命名空间</span><br><span class="line">	//::访问修饰符</span><br><span class="line">	cout &lt;&lt; NSP_A::a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; NSP_B::a &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; NSP_B::NSP_C::c &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	//使用命名空间中的结构体</span><br><span class="line">	//using namespace NSP_A;</span><br><span class="line">	//struct NSP_A::Teacher t;</span><br><span class="line"></span><br><span class="line">	using NSP_A::Teacher;</span><br><span class="line">	Teacher t;</span><br><span class="line">	t.age = 10;</span><br><span class="line"></span><br><span class="line">	using namespace NSP_B;</span><br><span class="line">	Student s1;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"><span class="comment">#define PI 3.14</span></span><br><span class="line">//圆</span><br><span class="line">class MyCircle&#123;</span><br><span class="line">//属性(共用权限访问修饰符)</span><br><span class="line">private:</span><br><span class="line">	double r;</span><br><span class="line">	double s;</span><br><span class="line">public:</span><br><span class="line">	void setR(double r)&#123;</span><br><span class="line">		this-&gt;r = r;</span><br><span class="line">	&#125;</span><br><span class="line">	//获取面积</span><br><span class="line">	double <span class="function"><span class="title">getS</span></span>()&#123;</span><br><span class="line">		<span class="built_in">return</span> PI * r * r;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	MyCircle c1;</span><br><span class="line">	c1.setR(4);</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">"圆的面积："</span> &lt;&lt; c1.getS() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line">//结构体</span><br><span class="line">/*</span><br><span class="line">struct MyTeacher&#123;</span><br><span class="line">private:</span><br><span class="line">	char name[20];</span><br><span class="line">	int age;</span><br><span class="line">public:</span><br><span class="line">	void <span class="function"><span class="title">say</span></span>()&#123;</span><br><span class="line">		cout &lt;&lt; this-&gt;age &lt;&lt; <span class="string">"岁"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	void setAge(int age)&#123;</span><br><span class="line">		this-&gt;age = age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	MyTeacher t1;</span><br><span class="line">	t1.setAge(10);</span><br><span class="line">	t1.say();</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//布尔类型</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	bool isSingle = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">if</span> (isSingle)&#123;//不为0条件都成立</span><br><span class="line">		cout &lt;&lt; <span class="string">"单身"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"有对象"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	int a = 10, b = 20;</span><br><span class="line">	((a &gt; b) ? a : b) = 30;</span><br><span class="line">	cout &lt;&lt; b &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//引用</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//变量名-门牌号(内存空间0x0001的别名)</span><br><span class="line">	int a = 10;</span><br><span class="line">	//b就是这个内存空间另外一个别名</span><br><span class="line">	//&amp; C++中的引用</span><br><span class="line">	int &amp;b = a;</span><br><span class="line">	cout &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">"&amp;a:"</span> &lt;&lt; &amp;a &lt;&lt; <span class="string">",&amp;b:"</span> &lt;&lt; &amp;b &lt;&lt; endl;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">//指针值交换</span><br><span class="line">void swap_1(int *a, int *b)&#123;</span><br><span class="line">	int c = 0;</span><br><span class="line">	c = *a;</span><br><span class="line">	*a = *b;</span><br><span class="line">	*b = c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//引用值交换</span><br><span class="line">void swap_2(int &amp;a, int &amp;b)&#123;</span><br><span class="line">	int c = 0;</span><br><span class="line">	c = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int x = 10;</span><br><span class="line">	int y = 20;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d,%d\n"</span>, x, y);</span><br><span class="line">	//swap_1(&amp;x, &amp;y);</span><br><span class="line">	//a成了x的别名</span><br><span class="line">	swap_2(x, y);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d,%d\n"</span>, x, y);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line">/*</span><br><span class="line">struct Teacher&#123;</span><br><span class="line">	char* name;</span><br><span class="line">	int age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void myprint(Teacher &amp;t)&#123;</span><br><span class="line">	cout &lt;&lt; t.name &lt;&lt; <span class="string">","</span> &lt;&lt; t.age &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">void myprint2(Teacher *t)&#123;</span><br><span class="line">	cout &lt;&lt; t-&gt;name &lt;&lt; <span class="string">","</span> &lt;&lt; t-&gt;age &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//引用的主要功能：作为函数的参数或返回值</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	Teacher t;</span><br><span class="line">	t.name = <span class="string">"hzh"</span>;</span><br><span class="line">	t.age = 24;</span><br><span class="line">	myprint(t);</span><br><span class="line">	myprint2(&amp;t);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line">/*</span><br><span class="line">//指针的引用，代替二级指针</span><br><span class="line">struct Teacher&#123;</span><br><span class="line">	char* name;</span><br><span class="line">	int age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void getTeacher(Teacher **p)&#123;</span><br><span class="line">	Teacher *tmp = (Teacher*)malloc(sizeof(Teacher));</span><br><span class="line">	tmp-&gt;age = 20;</span><br><span class="line">	*p = tmp;</span><br><span class="line">&#125;</span><br><span class="line">//指针的引用，代替二级指针</span><br><span class="line">void getTeacher(Teacher* &amp;p)&#123;</span><br><span class="line">	p = (Teacher*)malloc(sizeof(Teacher));</span><br><span class="line">	p-&gt;age = 20;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	Teacher *t = NULL;</span><br><span class="line">	//getTeacher(&amp;t);</span><br><span class="line">	getTeacher(t);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//指针常量与常量指针</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//指针常量，指针的常量，不改变地址的指针，但是可以修改它指向的内容</span><br><span class="line">	int a = 2, b = 3;</span><br><span class="line">	int *const p1 = &amp;a;</span><br><span class="line">	//p1 = &amp;b;	//NO</span><br><span class="line">	*p1 = 4;</span><br><span class="line"></span><br><span class="line">	//常量指针，指向常量的指针，内容不能修改</span><br><span class="line">	const int *p2 = &amp;a;</span><br><span class="line">	p2 = &amp;b;</span><br><span class="line">	//*p2 = 4;	//NO</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//1.单纯给变量取别名没有任何意义，作为函数参数传递，能保证参数传递过程中不产生副本</span><br><span class="line">//2.引用可以直接操作变量，指针要通过取值(*p),间接操作变量，指针的可读性差</span><br><span class="line">/*</span><br><span class="line">//常引用类似于java中final</span><br><span class="line">void myprintf(const int &amp;a)&#123;</span><br><span class="line">	cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//const int a;</span><br><span class="line">	//引用必须要有值，不能为空</span><br><span class="line">	//int &amp;a = NULL;</span><br><span class="line"></span><br><span class="line">	//常引用</span><br><span class="line">	int a = 10, b = 9;</span><br><span class="line">	const int &amp;c = a;</span><br><span class="line"></span><br><span class="line">	//字面量</span><br><span class="line">	const int &amp;d = 70;</span><br><span class="line"></span><br><span class="line">	//c = b;</span><br><span class="line">	myprintf(c);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//引用的大小</span><br><span class="line">/*</span><br><span class="line">struct Teacher&#123;</span><br><span class="line">	char name[20];</span><br><span class="line">	int age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	Teacher t;</span><br><span class="line"></span><br><span class="line">	Teacher &amp;t1 = t;</span><br><span class="line">	Teacher *p = &amp;t;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; sizeof(t1) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; sizeof(p) &lt;&lt; endl;	//所有指针都是4字节大小</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">struct Teacher&#123;</span><br><span class="line">	char name[20];</span><br><span class="line">	int age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void myprint(Teacher *t)&#123;</span><br><span class="line">	cout &lt;&lt; t-&gt;name &lt;&lt; <span class="string">","</span> &lt;&lt; t-&gt;age &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void myprint2(Teacher &amp;t)&#123;</span><br><span class="line">	cout &lt;&lt; t.name &lt;&lt; <span class="string">","</span> &lt;&lt; t.age &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	Teacher t;</span><br><span class="line"></span><br><span class="line">	Teacher *p = NULL;</span><br><span class="line">	//报错，防止不报错，进行非空判断</span><br><span class="line">	myprint(p);</span><br><span class="line"></span><br><span class="line">	//引用不能为空，没法传进去</span><br><span class="line">	Teacher &amp;t2 = NULL;</span><br><span class="line">	myprint2(t2);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//函数默认参数</span><br><span class="line">/*</span><br><span class="line">void myprint(int x,int y = 9,int z = 10)&#123;</span><br><span class="line">	cout &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">//重载</span><br><span class="line">void myprint(int x, int y)&#123;</span><br><span class="line">	cout &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	myprint(20);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//可变参数</span><br><span class="line">//int...</span><br><span class="line">/*</span><br><span class="line">void func(int i,...)&#123;</span><br><span class="line">	//可变参数指针</span><br><span class="line">	va_list args_p;</span><br><span class="line">	//开始读取可变参数，i是最后一个固定参数</span><br><span class="line">	va_start(args_p, i);</span><br><span class="line">	int a = va_arg(args_p, int);</span><br><span class="line">	char b = va_arg(args_p, char);</span><br><span class="line">	int c = va_arg(args_p, int);</span><br><span class="line">	cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">	//结束</span><br><span class="line">	va_end(args_p);</span><br><span class="line">&#125;</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	func(9,20,<span class="string">'b'</span>,30);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//循环读取</span><br><span class="line">void func(int i, ...)&#123;</span><br><span class="line">	//可变参数指针</span><br><span class="line">	va_list args_p;</span><br><span class="line">	//开始读取可变参数，i是最后一个固定参数</span><br><span class="line">	va_start(args_p, i);</span><br><span class="line">	int value = 0;</span><br><span class="line">	<span class="keyword">while</span> (1)&#123;</span><br><span class="line">		value = va_arg(args_p, int);</span><br><span class="line">		<span class="keyword">if</span> (value &lt;= 0)&#123;</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; value &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//结束</span><br><span class="line">	va_end(args_p);</span><br><span class="line">&#125;</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	func(9, 20, 40, 30);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/08_31_C++_02/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -744,6 +544,406 @@
 <p>Jet.cpp<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include"Jet.h"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">void Jet::<span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">"直升飞机在原地起飞..."</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Jet::<span class="function"><span class="title">land</span></span>()&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">"直升飞机着陆..."</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Copter.h<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#pragma once</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#include"Plane.h"</span></span><br><span class="line"></span><br><span class="line">//喷气式飞机</span><br><span class="line">class Copter : public Plane&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void fly();</span><br><span class="line">	virtual void land();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>Copter.cpp<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include"Copter.h"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">void Copter::<span class="function"><span class="title">fly</span></span>()&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">"喷气式飞机在跑道上起飞..."</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Copter::<span class="function"><span class="title">land</span></span>()&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">"喷气式飞机在跑道上着陆..."</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/08_29_C++_02/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaohao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaohao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/27/08_29_C++_02/" class="post-title-link" itemprop="http://yoursite.com/page/3/index.html">友元函数_运算符重载</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-27 11:48:30" itemprop="dateCreated datePublished" datetime="2019-09-27T11:48:30+08:00">2019-09-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-07 16:40:10" itemprop="dateModified" datetime="2019-01-07T16:40:10+08:00">2019-01-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/" itemprop="url" rel="index"><span itemprop="name">NDK开发</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/NDK-C/" itemprop="url" rel="index"><span itemprop="name">NDK_C++</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/27/08_29_C++_02/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/09/27/08_29_C++_02/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/09/27/08_29_C++_02/" class="leancloud_visitors" data-flag-title="友元函数_运算符重载">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line">//友元函数</span><br><span class="line">/*</span><br><span class="line">class A&#123;</span><br><span class="line">	//友元函数</span><br><span class="line">	friend void modify_i(A* p, int a);</span><br><span class="line">private:</span><br><span class="line">	int i;</span><br><span class="line">public:</span><br><span class="line">	A(int i)&#123;</span><br><span class="line">		this-&gt;i = i;</span><br><span class="line">	&#125;</span><br><span class="line">	void <span class="function"><span class="title">myprint</span></span>()&#123;</span><br><span class="line">		cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//友元函数的实现，在友元函数中可以访问私有的属性</span><br><span class="line">void modify_i(A* p, int a)&#123;</span><br><span class="line">	p-&gt;i = a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	A* a = new A(10);</span><br><span class="line">	a-&gt;myprint();</span><br><span class="line"></span><br><span class="line">	modify_i(a,20);</span><br><span class="line">	a-&gt;myprint();</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//友元类</span><br><span class="line">/*</span><br><span class="line">class A&#123;</span><br><span class="line">	//友元类</span><br><span class="line">	friend class B;</span><br><span class="line">private:</span><br><span class="line">	int i;</span><br><span class="line">public:</span><br><span class="line">	A(int i)&#123;</span><br><span class="line">		this-&gt;i = i;</span><br><span class="line">	&#125;</span><br><span class="line">	void <span class="function"><span class="title">myprint</span></span>()&#123;</span><br><span class="line">		cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class B&#123;</span><br><span class="line">public:</span><br><span class="line">	//B这个友元类可以访问A类的任何成员</span><br><span class="line">	void <span class="function"><span class="title">accessAny</span></span>()&#123;</span><br><span class="line">		a.i = 30;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	A a;</span><br><span class="line">&#125;;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//运算符重载</span><br><span class="line">/*</span><br><span class="line">class Point&#123;</span><br><span class="line">public:</span><br><span class="line">	int x;</span><br><span class="line">	int y;</span><br><span class="line">public:</span><br><span class="line">	Point(int x = 0,int y = 0)&#123;</span><br><span class="line">		this-&gt;x = x;</span><br><span class="line">		this-&gt;y = y;</span><br><span class="line">	&#125;</span><br><span class="line">	//成员函数，运算符重载</span><br><span class="line">	Point operator+(Point &amp;p2)&#123;</span><br><span class="line">		Point tmp(this-&gt;x + p2.x, this-&gt;y + p2.y);</span><br><span class="line">		<span class="built_in">return</span> tmp;</span><br><span class="line">	&#125;</span><br><span class="line">	void <span class="function"><span class="title">myprint</span></span>()&#123;</span><br><span class="line">		cout &lt;&lt; x &lt;&lt; <span class="string">","</span> &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//重载+号</span><br><span class="line">//Point operator+(Point &amp;p1, Point &amp;p2)&#123;</span><br><span class="line">//	Point tmp(p1.x + p2.x, p1.y + p2.y);</span><br><span class="line">//	<span class="built_in">return</span> tmp;</span><br><span class="line">//&#125;</span><br><span class="line"></span><br><span class="line">//重载-号</span><br><span class="line">Point operator-(Point &amp;p1, Point &amp;p2)&#123;</span><br><span class="line">	Point tmp(p1.x - p2.x, p1.y - p2.y);</span><br><span class="line">	<span class="built_in">return</span> tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	Point p1(10, 20);</span><br><span class="line">	Point p2(20, 10);</span><br><span class="line"></span><br><span class="line">	//运算符的重载，本质还是函数调用</span><br><span class="line">	//p1.operator+(p2)</span><br><span class="line">	Point p3 = p1 + p2;</span><br><span class="line"></span><br><span class="line">	p3.myprint();</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//当属性私有时，通过友元函数完成运算符重载</span><br><span class="line">class Point&#123;</span><br><span class="line">	friend Point operator+(Point &amp;p1, Point &amp;p2);</span><br><span class="line">private:</span><br><span class="line">	int x;</span><br><span class="line">	int y;</span><br><span class="line">public:</span><br><span class="line">	Point(int x = 0, int y = 0)&#123;</span><br><span class="line">		this-&gt;x = x;</span><br><span class="line">		this-&gt;y = y;</span><br><span class="line">	&#125;</span><br><span class="line">	void <span class="function"><span class="title">myprint</span></span>()&#123;</span><br><span class="line">		cout &lt;&lt; x &lt;&lt; <span class="string">","</span> &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Point operator+(Point &amp;p1, Point &amp;p2)&#123;</span><br><span class="line">	Point tmp(p1.x + p2.x, p1.y + p2.y);</span><br><span class="line">	<span class="built_in">return</span> tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	Point p1(10, 20);</span><br><span class="line">	Point p2(20, 10);</span><br><span class="line"></span><br><span class="line">	//运算符的重载，本质还是函数调用</span><br><span class="line">	//p1.operator+(p2)</span><br><span class="line">	Point p3 = p1 + p2;</span><br><span class="line"></span><br><span class="line">	p3.myprint();</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/09_05_C++/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaohao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaohao's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/27/09_05_C++/" class="post-title-link" itemprop="http://yoursite.com/page/3/index.html">异常处理_模板类</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-27 11:48:30" itemprop="dateCreated datePublished" datetime="2019-09-27T11:48:30+08:00">2019-09-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-12 17:03:00" itemprop="dateModified" datetime="2019-01-12T17:03:00+08:00">2019-01-12</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/" itemprop="url" rel="index"><span itemprop="name">NDK开发</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/NDK-C/" itemprop="url" rel="index"><span itemprop="name">NDK_C++</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/27/09_05_C++/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/09/27/09_05_C++/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/09/27/09_05_C++/" class="leancloud_visitors" data-flag-title="异常处理_模板类">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br></pre></td><td class="code"><pre><span class="line">//C++异常处理，根据抛出的异常数据类型，进入到相应的catch块中</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		int age = 300;</span><br><span class="line">		<span class="keyword">if</span> (age &gt; 200)&#123;</span><br><span class="line">			throw 9.8;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (int a)&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"int异常"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (char* b)&#123;</span><br><span class="line">		cout &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (...)&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"未知异常"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//throw抛出函数外</span><br><span class="line">/*</span><br><span class="line">void mydiv(int a,int b)&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == 0)&#123;</span><br><span class="line">		throw <span class="string">"除数为零"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">func</span></span>()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		mydiv(8, 0);</span><br><span class="line">	&#125;</span><br><span class="line">	catch (char *a)&#123;</span><br><span class="line">		throw a;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		func();</span><br><span class="line">	&#125;</span><br><span class="line">	catch (char *a)&#123;</span><br><span class="line">		cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//抛出对象</span><br><span class="line">//异常类</span><br><span class="line">/*</span><br><span class="line">class MyException&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void mydiv(int a, int b)&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == 0)&#123;</span><br><span class="line">		//throw MyException();</span><br><span class="line">		//throw new MyException;	//不要抛出异常指针</span><br><span class="line">		throw MyException();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		mydiv(8,0);</span><br><span class="line">	&#125;</span><br><span class="line">	catch (MyException &amp;e2)&#123;	//最好用引用，不会产生副本</span><br><span class="line">		cout &lt;&lt; <span class="string">"MyException引用"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (MyException e)&#123;	//会产生对象的副本</span><br><span class="line">		cout &lt;&lt; <span class="string">"MyException"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (MyException* e1)&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"MyException指针"</span> &lt;&lt; endl;</span><br><span class="line">		delete e1;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//throw 声明函数会抛出的异常类型</span><br><span class="line">/*</span><br><span class="line">void mydiv(int a, int b) throw (char*,int)&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == 0)&#123;</span><br><span class="line">		throw <span class="string">"除数为零"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//标准异常(类似于JavaNullPointerException)</span><br><span class="line">/*</span><br><span class="line">class NullPointerException : public exception&#123;</span><br><span class="line">public:</span><br><span class="line">	NullPointerException(char* msg) :exception(msg)&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void mydiv(int a, int b) throw (char*, int)&#123;</span><br><span class="line">	<span class="keyword">if</span> (b &gt; 10)&#123;</span><br><span class="line">		throw out_of_range(<span class="string">"超出范围"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (b == NULL)&#123;</span><br><span class="line">		throw NullPointerException(<span class="string">"为空"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (b == 0)&#123;</span><br><span class="line">		throw invalid_argument(<span class="string">"参数不合法"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		mydiv(8, NULL);</span><br><span class="line">	&#125;</span><br><span class="line">	catch (out_of_range e1)&#123;</span><br><span class="line">		cout &lt;&lt; e1.what() &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (NullPointerException &amp;e2)&#123;</span><br><span class="line">		cout &lt;&lt; e2.what() &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (...)&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//外部类异常</span><br><span class="line">/*</span><br><span class="line">class Err&#123;</span><br><span class="line">public:</span><br><span class="line">	class MyException&#123;</span><br><span class="line">	public:<span class="function"><span class="title">MyException</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void mydiv(int a, int b) throw (char*, int)&#123;</span><br><span class="line">	<span class="keyword">if</span> (b &gt; 10)&#123;</span><br><span class="line">		throw Err::MyException();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">template&lt;class T&gt;</span><br><span class="line">class A&#123;</span><br><span class="line">public:</span><br><span class="line">	A(T a)&#123;</span><br><span class="line">		this-&gt;a = a;</span><br><span class="line">	&#125;</span><br><span class="line">protected:</span><br><span class="line">	T a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//普通类继承模板类</span><br><span class="line">class B : public A&lt;int&gt;&#123;</span><br><span class="line">public:</span><br><span class="line">	B(int a,int b) : A&lt;int&gt;(a)&#123;</span><br><span class="line">		this-&gt;b = b;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//模板类继承模板类</span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">class C : public A&lt;T&gt;&#123;</span><br><span class="line">public:</span><br><span class="line">	C(T c,T a) : A&lt;T&gt;(a)&#123;</span><br><span class="line">		this-&gt;c = c;</span><br><span class="line">	&#125;</span><br><span class="line">protected:</span><br><span class="line">	T c;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//实例化模板类对象</span><br><span class="line">	A&lt;int&gt; a(6);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1611,7 +1811,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/09_05_C++/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/09_23_ffmpeg/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhaohao">
@@ -1631,7 +1831,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/09/27/09_05_C++/" class="post-title-link" itemprop="http://yoursite.com/page/3/index.html">异常处理_模板类</a>
+                <a href="/2019/09/27/09_23_ffmpeg/" class="post-title-link" itemprop="http://yoursite.com/page/3/index.html">ffmpeg音频解码及AudioTrack音频播放</a>
               
             
           </h1>
@@ -1673,7 +1873,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-12 17:03:00" itemprop="dateModified" datetime="2019-01-12T17:03:00+08:00">2019-01-12</time>
+                <time title="修改时间：2019-03-02 17:27:34" itemprop="dateModified" datetime="2019-03-02T17:27:34+08:00">2019-03-02</time>
               
             
           </span>
@@ -1697,7 +1897,7 @@
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/NDK-C/" itemprop="url" rel="index"><span itemprop="name">NDK_C++</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/NDK-ffmpeg/" itemprop="url" rel="index"><span itemprop="name">NDK_ffmpeg</span></a></span>
 
                 
                 
@@ -1712,8 +1912,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/27/09_05_C++/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/09/27/09_05_C++/" itemprop="commentCount"></span>
+                <a href="/2019/09/27/09_23_ffmpeg/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/09/27/09_23_ffmpeg/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1721,7 +1921,7 @@
 
           
           
-             <span id="/2019/09/27/09_05_C++/" class="leancloud_visitors" data-flag-title="异常处理_模板类">
+             <span id="/2019/09/27/09_23_ffmpeg/" class="leancloud_visitors" data-flag-title="ffmpeg音频解码及AudioTrack音频播放">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1754,7 +1954,9 @@
       
         
           
-            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br></pre></td><td class="code"><pre><span class="line">//C++异常处理，根据抛出的异常数据类型，进入到相应的catch块中</span><br><span class="line">/*</span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		int age = 300;</span><br><span class="line">		<span class="keyword">if</span> (age &gt; 200)&#123;</span><br><span class="line">			throw 9.8;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (int a)&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"int异常"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (char* b)&#123;</span><br><span class="line">		cout &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (...)&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"未知异常"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//throw抛出函数外</span><br><span class="line">/*</span><br><span class="line">void mydiv(int a,int b)&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == 0)&#123;</span><br><span class="line">		throw <span class="string">"除数为零"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">func</span></span>()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		mydiv(8, 0);</span><br><span class="line">	&#125;</span><br><span class="line">	catch (char *a)&#123;</span><br><span class="line">		throw a;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		func();</span><br><span class="line">	&#125;</span><br><span class="line">	catch (char *a)&#123;</span><br><span class="line">		cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//抛出对象</span><br><span class="line">//异常类</span><br><span class="line">/*</span><br><span class="line">class MyException&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void mydiv(int a, int b)&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == 0)&#123;</span><br><span class="line">		//throw MyException();</span><br><span class="line">		//throw new MyException;	//不要抛出异常指针</span><br><span class="line">		throw MyException();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		mydiv(8,0);</span><br><span class="line">	&#125;</span><br><span class="line">	catch (MyException &amp;e2)&#123;	//最好用引用，不会产生副本</span><br><span class="line">		cout &lt;&lt; <span class="string">"MyException引用"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (MyException e)&#123;	//会产生对象的副本</span><br><span class="line">		cout &lt;&lt; <span class="string">"MyException"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (MyException* e1)&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"MyException指针"</span> &lt;&lt; endl;</span><br><span class="line">		delete e1;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//throw 声明函数会抛出的异常类型</span><br><span class="line">/*</span><br><span class="line">void mydiv(int a, int b) throw (char*,int)&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == 0)&#123;</span><br><span class="line">		throw <span class="string">"除数为零"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//标准异常(类似于JavaNullPointerException)</span><br><span class="line">/*</span><br><span class="line">class NullPointerException : public exception&#123;</span><br><span class="line">public:</span><br><span class="line">	NullPointerException(char* msg) :exception(msg)&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void mydiv(int a, int b) throw (char*, int)&#123;</span><br><span class="line">	<span class="keyword">if</span> (b &gt; 10)&#123;</span><br><span class="line">		throw out_of_range(<span class="string">"超出范围"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (b == NULL)&#123;</span><br><span class="line">		throw NullPointerException(<span class="string">"为空"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (b == 0)&#123;</span><br><span class="line">		throw invalid_argument(<span class="string">"参数不合法"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		mydiv(8, NULL);</span><br><span class="line">	&#125;</span><br><span class="line">	catch (out_of_range e1)&#123;</span><br><span class="line">		cout &lt;&lt; e1.what() &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (NullPointerException &amp;e2)&#123;</span><br><span class="line">		cout &lt;&lt; e2.what() &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (...)&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//外部类异常</span><br><span class="line">/*</span><br><span class="line">class Err&#123;</span><br><span class="line">public:</span><br><span class="line">	class MyException&#123;</span><br><span class="line">	public:<span class="function"><span class="title">MyException</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void mydiv(int a, int b) throw (char*, int)&#123;</span><br><span class="line">	<span class="keyword">if</span> (b &gt; 10)&#123;</span><br><span class="line">		throw Err::MyException();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">template&lt;class T&gt;</span><br><span class="line">class A&#123;</span><br><span class="line">public:</span><br><span class="line">	A(T a)&#123;</span><br><span class="line">		this-&gt;a = a;</span><br><span class="line">	&#125;</span><br><span class="line">protected:</span><br><span class="line">	T a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//普通类继承模板类</span><br><span class="line">class B : public A&lt;int&gt;&#123;</span><br><span class="line">public:</span><br><span class="line">	B(int a,int b) : A&lt;int&gt;(a)&#123;</span><br><span class="line">		this-&gt;b = b;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//模板类继承模板类</span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">class C : public A&lt;T&gt;&#123;</span><br><span class="line">public:</span><br><span class="line">	C(T c,T a) : A&lt;T&gt;(a)&#123;</span><br><span class="line">		this-&gt;c = c;</span><br><span class="line">	&#125;</span><br><span class="line">protected:</span><br><span class="line">	T c;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	//实例化模板类对象</span><br><span class="line">	A&lt;int&gt; a(6);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p>笔记<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1.读取压缩数据时要判断压缩数据的类型</span><br><span class="line"><span class="keyword">while</span> (av_read_frame(pFormatCtx, packet) &gt;= 0)&#123;</span><br><span class="line">    ...</span><br><span class="line">    //解码音频类型的packet</span><br><span class="line">    <span class="keyword">if</span> (packet-&gt;stream_index == audio_stream_idx)&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">2.解码每一帧成功时创建了byte数组引用后要释放</span><br><span class="line"><span class="keyword">if</span> (got_frame &gt; 0)&#123;</span><br><span class="line">    ...</span><br><span class="line">    (*env)-&gt;DeleteLocalRef(env,audio_sample_array);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>HzhPlayer.java<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">public class HzhPlayer &#123;</span><br><span class="line">    public native void sound(String input,String output);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 创建一个AudioTrack对象，用于播放</span><br><span class="line">     * @param nb_channels</span><br><span class="line">     * @<span class="built_in">return</span></span><br><span class="line">     */</span><br><span class="line">    public AudioTrack createAudioTrack(int sampleRateInHz, int nb_channels)&#123;</span><br><span class="line">        //固定格式的音频码流</span><br><span class="line">        int audioFormat = AudioFormat.ENCODING_PCM_16BIT;</span><br><span class="line">        Log.i(<span class="string">"hzh"</span>,<span class="string">"nb_channels = "</span> + nb_channels);</span><br><span class="line">        //声道布局</span><br><span class="line">        int channelConfig;</span><br><span class="line">        <span class="keyword">if</span> (nb_channels == 1)&#123;</span><br><span class="line">            channelConfig = AudioFormat.CHANNEL_IN_MONO;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (nb_channels == 2)&#123;</span><br><span class="line">            channelConfig = AudioFormat.CHANNEL_OUT_STEREO;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            channelConfig = AudioFormat.CHANNEL_OUT_STEREO;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        int bufferSizeInBytes = AudioTrack.getMinBufferSize(sampleRateInHz,channelConfig,audioFormat);</span><br><span class="line">        AudioTrack audioTrack = new AudioTrack(</span><br><span class="line">                AudioManager.STREAM_MUSIC,</span><br><span class="line">                sampleRateInHz,channelConfig,</span><br><span class="line">                audioFormat,</span><br><span class="line">                bufferSizeInBytes,AudioTrack.MODE_STREAM);</span><br><span class="line"></span><br><span class="line">        //播放</span><br><span class="line">        //audioTrack.play();</span><br><span class="line">        //写入PCM</span><br><span class="line">        //audioTrack.write(byte[] audioData, int offsetInBytes, int sizeInBytes);</span><br><span class="line">        <span class="built_in">return</span> audioTrack;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        System.loadLibrary(<span class="string">"avutil-54"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"swresample-1"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"avcodec-56"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"avformat-56"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"swscale-3"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"postproc-53"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"avfilter-5"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"avdevice-56"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"audio_player"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>audio_player.c<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include "com_hzh_ffmpeg_player_HzhPlayer.h"</span></span><br><span class="line">//封装格式</span><br><span class="line"><span class="comment">#include "libavformat/avformat.h"</span></span><br><span class="line">//解码</span><br><span class="line"><span class="comment">#include "libavcodec/avcodec.h"</span></span><br><span class="line">//缩放</span><br><span class="line"><span class="comment">#include "libswscale/swscale.h"</span></span><br><span class="line">//重采样</span><br><span class="line"><span class="comment">#include "libswresample/swresample.h"</span></span><br><span class="line"><span class="comment">#include "unistd.h"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define MAX_AUDIO_FRAME_SIZE 48000 * 4</span></span><br><span class="line">JNIEXPORT void JNICALL Java_com_hzh_ffmpeg_1player_HzhPlayer_sound</span><br><span class="line">        (JNIEnv *env, jobject jthiz, jstring input_jstr, jstring output_jstr)&#123;</span><br><span class="line">    const char *input_cstr = (*env)-&gt;GetStringUTFChars(env, input_jstr, NULL);</span><br><span class="line">    const char *output_cstr = (*env)-&gt;GetStringUTFChars(env, output_jstr,NULL);</span><br><span class="line"></span><br><span class="line">    //1.注册组件</span><br><span class="line">    av_register_all();</span><br><span class="line">    AVFormatContext *pFormatCtx = avformat_alloc_context();</span><br><span class="line"></span><br><span class="line">    //打开音频文件</span><br><span class="line">    <span class="keyword">if</span> (avformat_open_input(&amp;pFormatCtx,input_cstr,NULL,NULL) !=0)&#123;</span><br><span class="line">        LOGE(<span class="string">"%s"</span>,<span class="string">"无法打开音频文件"</span>);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    //获取输入文件信息</span><br><span class="line">    <span class="keyword">if</span>(avformat_find_stream_info(pFormatCtx,NULL) &lt; 0)&#123;</span><br><span class="line">        LOGE(<span class="string">"%s"</span>,<span class="string">"无法获取输入文件信息"</span>);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    //获取音频流索引位置</span><br><span class="line">    int i = 0,audio_stream_idx = -1;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; pFormatCtx-&gt;nb_streams; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pFormatCtx-&gt;streams[i]-&gt;codec-&gt;codec_type == AVMEDIA_TYPE_AUDIO)&#123;</span><br><span class="line">            audio_stream_idx = i;</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //获取解码器</span><br><span class="line">    AVCodecContext *codecCtx = pFormatCtx-&gt;streams[audio_stream_idx]-&gt;codec;</span><br><span class="line">    AVCodec *codec = avcodec_find_decoder(codecCtx-&gt;codec_id);</span><br><span class="line">    <span class="keyword">if</span> (codec == NULL)&#123;</span><br><span class="line">        LOGE(<span class="string">"%s"</span>,<span class="string">"无法获取解码器"</span>);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    //打开解码器</span><br><span class="line">    <span class="keyword">if</span> (avcodec_open2(codecCtx,codec,NULL) &lt; 0)&#123;</span><br><span class="line">        LOGE(<span class="string">"%s"</span>,<span class="string">"无法打开解码器"</span>);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //压缩数据</span><br><span class="line">    AVPacket *packet = av_malloc(sizeof(AVPacket));</span><br><span class="line">    //解压缩数据</span><br><span class="line">    AVFrame *frame = av_frame_alloc();</span><br><span class="line">    //frame-&gt;16bit 44100HZ PCM 统一音频采样格式与采样率</span><br><span class="line">    SwrContext *swrCtx = swr_alloc();</span><br><span class="line">    //重采样设置参数------------start</span><br><span class="line">    //输入的采样格式</span><br><span class="line">    enum AVSampleFormat in_sample_fmt = codecCtx-&gt;sample_fmt;</span><br><span class="line">    //输出采样格式16bit PCM</span><br><span class="line">    enum AVSampleFormat out_sample_fmt = AV_SAMPLE_FMT_S16;</span><br><span class="line">    //输入采样率</span><br><span class="line">    int in_sample_rate = codecCtx-&gt;sample_rate;</span><br><span class="line">    //输出采样率</span><br><span class="line">    int out_sample_rate = in_sample_rate;</span><br><span class="line">    //获取输入的声道布局</span><br><span class="line">    //根据声道个数获取默认的声道布局（2个声道，默认立体声stereo）</span><br><span class="line">    //av_get_default_channel_layout(codecCtx-&gt;channels);</span><br><span class="line">    uint64_t in_ch_layout = codecCtx-&gt;channel_layout;</span><br><span class="line">    //输出的声道布局</span><br><span class="line">    uint64_t out_ch_layout = AV_CH_LAYOUT_STEREO;</span><br><span class="line"></span><br><span class="line">    swr_alloc_set_opts(swrCtx,</span><br><span class="line">                       out_ch_layout,out_sample_fmt,out_sample_rate,</span><br><span class="line">                       in_ch_layout,in_sample_fmt,in_sample_rate,</span><br><span class="line">                       0,NULL);</span><br><span class="line">    swr_init(swrCtx);</span><br><span class="line">    //输出的声道个数</span><br><span class="line">    int out_nb_channels = av_get_channel_layout_nb_channels(out_ch_layout);</span><br><span class="line">    //重采样设置参数------------end</span><br><span class="line"></span><br><span class="line">    //JNI------------------begin</span><br><span class="line">    //HzhPlayer</span><br><span class="line">    jclass player_class = (*env)-&gt;GetObjectClass(env, jthiz);</span><br><span class="line"></span><br><span class="line">    //AudioTrack对象</span><br><span class="line">    jmethodID create_audio_track_mid = (*env)-&gt;GetMethodID(env, player_class, <span class="string">"createAudioTrack"</span>, <span class="string">"(II)Landroid/media/AudioTrack;"</span>);</span><br><span class="line">    jobject audio_track = (*env)-&gt;CallObjectMethod(env, jthiz, create_audio_track_mid,out_sample_rate,out_nb_channels);</span><br><span class="line"></span><br><span class="line">    //调用AudioTrack.play方法</span><br><span class="line">    jclass audio_track_class = (*env)-&gt;GetObjectClass(env, audio_track);</span><br><span class="line">    jmethodID audio_track_play_mid = (*env)-&gt;GetMethodID(env, audio_track_class, <span class="string">"play"</span>, <span class="string">"()V"</span>);</span><br><span class="line">    (*env)-&gt;CallVoidMethod(env,audio_track,audio_track_play_mid);</span><br><span class="line"></span><br><span class="line">    //AudioTrack.write</span><br><span class="line">    jmethodID audio_track_write_mid = (*env)-&gt;GetMethodID(env, audio_track_class, <span class="string">"write"</span>, <span class="string">"([BII)I"</span>);</span><br><span class="line"></span><br><span class="line">    //JNI------------------end</span><br><span class="line"></span><br><span class="line">    //16bit 44100HZ PCM 数据</span><br><span class="line">    uint8_t *out_buffer = av_malloc(MAX_AUDIO_FRAME_SIZE);</span><br><span class="line"></span><br><span class="line">    //FILE *fp_pcm = fopen(output_cstr,<span class="string">"wb"</span>);</span><br><span class="line"></span><br><span class="line">    int got_frame = 0, ret,framecount = 0;</span><br><span class="line">    //不断读取压缩数据</span><br><span class="line">    <span class="keyword">while</span> (av_read_frame(pFormatCtx, packet) &gt;= 0)&#123;</span><br><span class="line">        //解码音频类型的packet</span><br><span class="line">        <span class="keyword">if</span> (packet-&gt;stream_index == audio_stream_idx)&#123;</span><br><span class="line">            ret = avcodec_decode_audio4(codecCtx, frame, &amp;got_frame, packet);</span><br><span class="line">            <span class="keyword">if</span> (ret &lt; 0)&#123;</span><br><span class="line">                LOGI(<span class="string">"%s"</span>,<span class="string">"解码完成"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            //解码一帧成功</span><br><span class="line">            <span class="keyword">if</span> (got_frame &gt; 0)&#123;</span><br><span class="line">                LOGI(<span class="string">"解码%d帧"</span>, ++framecount);</span><br><span class="line">                swr_convert(swrCtx, &amp;out_buffer,MAX_AUDIO_FRAME_SIZE, (const uint8_t **) frame-&gt;data, frame-&gt;nb_samples);</span><br><span class="line">                //获取sample的size</span><br><span class="line">                int out_buffer_size = av_samples_get_buffer_size(NULL,</span><br><span class="line">                                                                 out_nb_channels, frame-&gt;nb_samples,</span><br><span class="line">                                                                 out_sample_fmt, 1);</span><br><span class="line">                //out_buffer缓冲区数据，转成byte数组</span><br><span class="line">                jbyteArray audio_sample_array = (*env)-&gt;NewByteArray(env, out_buffer_size);</span><br><span class="line">                jbyte *sample_byte = (*env)-&gt;GetByteArrayElements(env, audio_sample_array, NULL);</span><br><span class="line">                //out_buffer的数据赋值到sample_byte</span><br><span class="line">                memcpy(sample_byte,out_buffer,out_buffer_size);</span><br><span class="line">                //同步</span><br><span class="line">                (*env)-&gt;ReleaseByteArrayElements(env,audio_sample_array,sample_byte,0);</span><br><span class="line"></span><br><span class="line">                //fwrite(out_buffer,1,out_buffer_size,fp_pcm);</span><br><span class="line">                //AudioTrack.write PCM数据</span><br><span class="line">                (*env)-&gt;CallIntMethod(env,audio_track,audio_track_write_mid,</span><br><span class="line">                                      audio_sample_array,0,out_buffer_size);</span><br><span class="line">                //释放局部引用</span><br><span class="line">                (*env)-&gt;DeleteLocalRef(env,audio_sample_array);</span><br><span class="line">                usleep(1000 * 16);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        av_free_packet(packet);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //fclose(fp_pcm);</span><br><span class="line">    av_frame_free(&amp;frame);</span><br><span class="line">    av_free(out_buffer);</span><br><span class="line"></span><br><span class="line">    swr_free(&amp;swrCtx);</span><br><span class="line">    avcodec_close(codecCtx);</span><br><span class="line">    avformat_close_input(&amp;pFormatCtx);</span><br><span class="line"></span><br><span class="line">    (*env)-&gt;ReleaseStringUTFChars(env,input_jstr,input_cstr);</span><br><span class="line">    (*env)-&gt;ReleaseStringUTFChars(env,output_jstr,output_cstr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -1963,208 +2165,6 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/09_23_ffmpeg/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhaohao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zhaohao's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/09/27/09_23_ffmpeg/" class="post-title-link" itemprop="http://yoursite.com/page/3/index.html">ffmpeg音频解码及AudioTrack音频播放</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-27 11:48:30" itemprop="dateCreated datePublished" datetime="2019-09-27T11:48:30+08:00">2019-09-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-02 17:27:34" itemprop="dateModified" datetime="2019-03-02T17:27:34+08:00">2019-03-02</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/" itemprop="url" rel="index"><span itemprop="name">NDK开发</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NDK开发/NDK-ffmpeg/" itemprop="url" rel="index"><span itemprop="name">NDK_ffmpeg</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/27/09_23_ffmpeg/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/09/27/09_23_ffmpeg/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/09/27/09_23_ffmpeg/" class="leancloud_visitors" data-flag-title="ffmpeg音频解码及AudioTrack音频播放">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>笔记<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1.读取压缩数据时要判断压缩数据的类型</span><br><span class="line"><span class="keyword">while</span> (av_read_frame(pFormatCtx, packet) &gt;= 0)&#123;</span><br><span class="line">    ...</span><br><span class="line">    //解码音频类型的packet</span><br><span class="line">    <span class="keyword">if</span> (packet-&gt;stream_index == audio_stream_idx)&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">2.解码每一帧成功时创建了byte数组引用后要释放</span><br><span class="line"><span class="keyword">if</span> (got_frame &gt; 0)&#123;</span><br><span class="line">    ...</span><br><span class="line">    (*env)-&gt;DeleteLocalRef(env,audio_sample_array);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>HzhPlayer.java<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">public class HzhPlayer &#123;</span><br><span class="line">    public native void sound(String input,String output);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 创建一个AudioTrack对象，用于播放</span><br><span class="line">     * @param nb_channels</span><br><span class="line">     * @<span class="built_in">return</span></span><br><span class="line">     */</span><br><span class="line">    public AudioTrack createAudioTrack(int sampleRateInHz, int nb_channels)&#123;</span><br><span class="line">        //固定格式的音频码流</span><br><span class="line">        int audioFormat = AudioFormat.ENCODING_PCM_16BIT;</span><br><span class="line">        Log.i(<span class="string">"hzh"</span>,<span class="string">"nb_channels = "</span> + nb_channels);</span><br><span class="line">        //声道布局</span><br><span class="line">        int channelConfig;</span><br><span class="line">        <span class="keyword">if</span> (nb_channels == 1)&#123;</span><br><span class="line">            channelConfig = AudioFormat.CHANNEL_IN_MONO;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (nb_channels == 2)&#123;</span><br><span class="line">            channelConfig = AudioFormat.CHANNEL_OUT_STEREO;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            channelConfig = AudioFormat.CHANNEL_OUT_STEREO;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        int bufferSizeInBytes = AudioTrack.getMinBufferSize(sampleRateInHz,channelConfig,audioFormat);</span><br><span class="line">        AudioTrack audioTrack = new AudioTrack(</span><br><span class="line">                AudioManager.STREAM_MUSIC,</span><br><span class="line">                sampleRateInHz,channelConfig,</span><br><span class="line">                audioFormat,</span><br><span class="line">                bufferSizeInBytes,AudioTrack.MODE_STREAM);</span><br><span class="line"></span><br><span class="line">        //播放</span><br><span class="line">        //audioTrack.play();</span><br><span class="line">        //写入PCM</span><br><span class="line">        //audioTrack.write(byte[] audioData, int offsetInBytes, int sizeInBytes);</span><br><span class="line">        <span class="built_in">return</span> audioTrack;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        System.loadLibrary(<span class="string">"avutil-54"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"swresample-1"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"avcodec-56"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"avformat-56"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"swscale-3"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"postproc-53"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"avfilter-5"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"avdevice-56"</span>);</span><br><span class="line">        System.loadLibrary(<span class="string">"audio_player"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>audio_player.c<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include "com_hzh_ffmpeg_player_HzhPlayer.h"</span></span><br><span class="line">//封装格式</span><br><span class="line"><span class="comment">#include "libavformat/avformat.h"</span></span><br><span class="line">//解码</span><br><span class="line"><span class="comment">#include "libavcodec/avcodec.h"</span></span><br><span class="line">//缩放</span><br><span class="line"><span class="comment">#include "libswscale/swscale.h"</span></span><br><span class="line">//重采样</span><br><span class="line"><span class="comment">#include "libswresample/swresample.h"</span></span><br><span class="line"><span class="comment">#include "unistd.h"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define MAX_AUDIO_FRAME_SIZE 48000 * 4</span></span><br><span class="line">JNIEXPORT void JNICALL Java_com_hzh_ffmpeg_1player_HzhPlayer_sound</span><br><span class="line">        (JNIEnv *env, jobject jthiz, jstring input_jstr, jstring output_jstr)&#123;</span><br><span class="line">    const char *input_cstr = (*env)-&gt;GetStringUTFChars(env, input_jstr, NULL);</span><br><span class="line">    const char *output_cstr = (*env)-&gt;GetStringUTFChars(env, output_jstr,NULL);</span><br><span class="line"></span><br><span class="line">    //1.注册组件</span><br><span class="line">    av_register_all();</span><br><span class="line">    AVFormatContext *pFormatCtx = avformat_alloc_context();</span><br><span class="line"></span><br><span class="line">    //打开音频文件</span><br><span class="line">    <span class="keyword">if</span> (avformat_open_input(&amp;pFormatCtx,input_cstr,NULL,NULL) !=0)&#123;</span><br><span class="line">        LOGE(<span class="string">"%s"</span>,<span class="string">"无法打开音频文件"</span>);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    //获取输入文件信息</span><br><span class="line">    <span class="keyword">if</span>(avformat_find_stream_info(pFormatCtx,NULL) &lt; 0)&#123;</span><br><span class="line">        LOGE(<span class="string">"%s"</span>,<span class="string">"无法获取输入文件信息"</span>);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    //获取音频流索引位置</span><br><span class="line">    int i = 0,audio_stream_idx = -1;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; pFormatCtx-&gt;nb_streams; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pFormatCtx-&gt;streams[i]-&gt;codec-&gt;codec_type == AVMEDIA_TYPE_AUDIO)&#123;</span><br><span class="line">            audio_stream_idx = i;</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //获取解码器</span><br><span class="line">    AVCodecContext *codecCtx = pFormatCtx-&gt;streams[audio_stream_idx]-&gt;codec;</span><br><span class="line">    AVCodec *codec = avcodec_find_decoder(codecCtx-&gt;codec_id);</span><br><span class="line">    <span class="keyword">if</span> (codec == NULL)&#123;</span><br><span class="line">        LOGE(<span class="string">"%s"</span>,<span class="string">"无法获取解码器"</span>);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    //打开解码器</span><br><span class="line">    <span class="keyword">if</span> (avcodec_open2(codecCtx,codec,NULL) &lt; 0)&#123;</span><br><span class="line">        LOGE(<span class="string">"%s"</span>,<span class="string">"无法打开解码器"</span>);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //压缩数据</span><br><span class="line">    AVPacket *packet = av_malloc(sizeof(AVPacket));</span><br><span class="line">    //解压缩数据</span><br><span class="line">    AVFrame *frame = av_frame_alloc();</span><br><span class="line">    //frame-&gt;16bit 44100HZ PCM 统一音频采样格式与采样率</span><br><span class="line">    SwrContext *swrCtx = swr_alloc();</span><br><span class="line">    //重采样设置参数------------start</span><br><span class="line">    //输入的采样格式</span><br><span class="line">    enum AVSampleFormat in_sample_fmt = codecCtx-&gt;sample_fmt;</span><br><span class="line">    //输出采样格式16bit PCM</span><br><span class="line">    enum AVSampleFormat out_sample_fmt = AV_SAMPLE_FMT_S16;</span><br><span class="line">    //输入采样率</span><br><span class="line">    int in_sample_rate = codecCtx-&gt;sample_rate;</span><br><span class="line">    //输出采样率</span><br><span class="line">    int out_sample_rate = in_sample_rate;</span><br><span class="line">    //获取输入的声道布局</span><br><span class="line">    //根据声道个数获取默认的声道布局（2个声道，默认立体声stereo）</span><br><span class="line">    //av_get_default_channel_layout(codecCtx-&gt;channels);</span><br><span class="line">    uint64_t in_ch_layout = codecCtx-&gt;channel_layout;</span><br><span class="line">    //输出的声道布局</span><br><span class="line">    uint64_t out_ch_layout = AV_CH_LAYOUT_STEREO;</span><br><span class="line"></span><br><span class="line">    swr_alloc_set_opts(swrCtx,</span><br><span class="line">                       out_ch_layout,out_sample_fmt,out_sample_rate,</span><br><span class="line">                       in_ch_layout,in_sample_fmt,in_sample_rate,</span><br><span class="line">                       0,NULL);</span><br><span class="line">    swr_init(swrCtx);</span><br><span class="line">    //输出的声道个数</span><br><span class="line">    int out_nb_channels = av_get_channel_layout_nb_channels(out_ch_layout);</span><br><span class="line">    //重采样设置参数------------end</span><br><span class="line"></span><br><span class="line">    //JNI------------------begin</span><br><span class="line">    //HzhPlayer</span><br><span class="line">    jclass player_class = (*env)-&gt;GetObjectClass(env, jthiz);</span><br><span class="line"></span><br><span class="line">    //AudioTrack对象</span><br><span class="line">    jmethodID create_audio_track_mid = (*env)-&gt;GetMethodID(env, player_class, <span class="string">"createAudioTrack"</span>, <span class="string">"(II)Landroid/media/AudioTrack;"</span>);</span><br><span class="line">    jobject audio_track = (*env)-&gt;CallObjectMethod(env, jthiz, create_audio_track_mid,out_sample_rate,out_nb_channels);</span><br><span class="line"></span><br><span class="line">    //调用AudioTrack.play方法</span><br><span class="line">    jclass audio_track_class = (*env)-&gt;GetObjectClass(env, audio_track);</span><br><span class="line">    jmethodID audio_track_play_mid = (*env)-&gt;GetMethodID(env, audio_track_class, <span class="string">"play"</span>, <span class="string">"()V"</span>);</span><br><span class="line">    (*env)-&gt;CallVoidMethod(env,audio_track,audio_track_play_mid);</span><br><span class="line"></span><br><span class="line">    //AudioTrack.write</span><br><span class="line">    jmethodID audio_track_write_mid = (*env)-&gt;GetMethodID(env, audio_track_class, <span class="string">"write"</span>, <span class="string">"([BII)I"</span>);</span><br><span class="line"></span><br><span class="line">    //JNI------------------end</span><br><span class="line"></span><br><span class="line">    //16bit 44100HZ PCM 数据</span><br><span class="line">    uint8_t *out_buffer = av_malloc(MAX_AUDIO_FRAME_SIZE);</span><br><span class="line"></span><br><span class="line">    //FILE *fp_pcm = fopen(output_cstr,<span class="string">"wb"</span>);</span><br><span class="line"></span><br><span class="line">    int got_frame = 0, ret,framecount = 0;</span><br><span class="line">    //不断读取压缩数据</span><br><span class="line">    <span class="keyword">while</span> (av_read_frame(pFormatCtx, packet) &gt;= 0)&#123;</span><br><span class="line">        //解码音频类型的packet</span><br><span class="line">        <span class="keyword">if</span> (packet-&gt;stream_index == audio_stream_idx)&#123;</span><br><span class="line">            ret = avcodec_decode_audio4(codecCtx, frame, &amp;got_frame, packet);</span><br><span class="line">            <span class="keyword">if</span> (ret &lt; 0)&#123;</span><br><span class="line">                LOGI(<span class="string">"%s"</span>,<span class="string">"解码完成"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            //解码一帧成功</span><br><span class="line">            <span class="keyword">if</span> (got_frame &gt; 0)&#123;</span><br><span class="line">                LOGI(<span class="string">"解码%d帧"</span>, ++framecount);</span><br><span class="line">                swr_convert(swrCtx, &amp;out_buffer,MAX_AUDIO_FRAME_SIZE, (const uint8_t **) frame-&gt;data, frame-&gt;nb_samples);</span><br><span class="line">                //获取sample的size</span><br><span class="line">                int out_buffer_size = av_samples_get_buffer_size(NULL,</span><br><span class="line">                                                                 out_nb_channels, frame-&gt;nb_samples,</span><br><span class="line">                                                                 out_sample_fmt, 1);</span><br><span class="line">                //out_buffer缓冲区数据，转成byte数组</span><br><span class="line">                jbyteArray audio_sample_array = (*env)-&gt;NewByteArray(env, out_buffer_size);</span><br><span class="line">                jbyte *sample_byte = (*env)-&gt;GetByteArrayElements(env, audio_sample_array, NULL);</span><br><span class="line">                //out_buffer的数据赋值到sample_byte</span><br><span class="line">                memcpy(sample_byte,out_buffer,out_buffer_size);</span><br><span class="line">                //同步</span><br><span class="line">                (*env)-&gt;ReleaseByteArrayElements(env,audio_sample_array,sample_byte,0);</span><br><span class="line"></span><br><span class="line">                //fwrite(out_buffer,1,out_buffer_size,fp_pcm);</span><br><span class="line">                //AudioTrack.write PCM数据</span><br><span class="line">                (*env)-&gt;CallIntMethod(env,audio_track,audio_track_write_mid,</span><br><span class="line">                                      audio_sample_array,0,out_buffer_size);</span><br><span class="line">                //释放局部引用</span><br><span class="line">                (*env)-&gt;DeleteLocalRef(env,audio_sample_array);</span><br><span class="line">                usleep(1000 * 16);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        av_free_packet(packet);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //fclose(fp_pcm);</span><br><span class="line">    av_frame_free(&amp;frame);</span><br><span class="line">    av_free(out_buffer);</span><br><span class="line"></span><br><span class="line">    swr_free(&amp;swrCtx);</span><br><span class="line">    avcodec_close(codecCtx);</span><br><span class="line">    avformat_close_input(&amp;pFormatCtx);</span><br><span class="line"></span><br><span class="line">    (*env)-&gt;ReleaseStringUTFChars(env,input_jstr,input_cstr);</span><br><span class="line">    (*env)-&gt;ReleaseStringUTFChars(env,output_jstr,output_cstr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
           
         
